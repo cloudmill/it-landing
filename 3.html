@@ -112,7 +112,8 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic&subset=latin,cyrillic,cyrillic-ext"
           rel="stylesheet" type="text/css">
     <style type="text/css">
-        input[name="Name_"]{
+        input[name="Name_"],
+        textarea[name="Comment_"]{
             border: 1px solid #FFFFFF;
             border-radius: 20px;
             background-color: #FFFFFF;
@@ -150,8 +151,6 @@
         <div id="wb_Text6"
              style="position:absolute;left:6px;top:61px;width:262px;height:23px;visibility:hidden;text-align:center;z-index:7;">
             <span style="color:#000000;font-family:'Calibri Light';font-size:19px;">Это точно Ваш телефон?</span></div>
-        <div id="wb_Image1" style="position:absolute;left:153px;top:29px;width:52px;height:52px;z-index:8;">
-            <img src="images/1114477.png" id="Image1" alt=""></div>
         <div id="wb_Form1" style="position:absolute;left:48px;top:105px;width:263px;height:239px;z-index:9;">
             <form name="Form1" method="post" action="<?php echo basename(__FILE__); ?>" enctype="multipart/form-data"
                   accept-charset="UTF-8" id="Form1">
@@ -183,14 +182,21 @@
                        onmouseout="ShowObject('Image6', 1);return false;" name="" value="Оставить заявку" class="style1"
                        style="position:absolute;left:1px;top:130px;width:261px;height:70px;z-index:4;">
                 <input type="tel" id="phone"
-                       style="position:absolute;left:2px;top:63px;width:247px;height:44px;z-index:5;" name="Tel_"
+                       style="position:absolute;left:2px;top:-20px;width:247px;height:44px;z-index:5;" name="Tel_"
                        value="" spellcheck="false" placeholder="+7(___) ___-__-__" $.fn.inputmasks="function(maskOpts,"
                        mode)=""
                         data-type="get-field"
                         data-field="phone_number"
                         carabi="1">
+                <textarea type="text"
+                    style="position:absolute;left:2px;top:36px;width:247px;height:80px;z-index:5;" name="Comment_"
+                    placeholder="Комментарий"
+                    value=""
+                    data-type="get-field"
+                    data-field="comment"
+                    carabi="1"></textarea>
                 <input type="text"
-                       style="position:absolute;left:2px;top:0px;width:247px;height:44px;z-index:5;" name="Name_"
+                       style="position:absolute;left:2px;top:-76px;width:247px;height:44px;z-index:5;" name="Name_"
                        placeholder="Имя"
                        value=""
                        data-type="get-field"
