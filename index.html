@@ -91,7 +91,6 @@
     <link rel="stylesheet" href="/components/page/index.css">
 </head>
 <body onload="ShowObject('GalBild2', 0);ShowObject('GalBild3', 0);return false;">
-<div class="page">page</div>
     <div id="container">
 </div>
 <div id="Layer1" style="position:absolute;text-align:center;left:0%;top:0px;width:100%;height:150px;z-index:109;min-width:1250px
@@ -249,6 +248,14 @@
 ">
     <div id="Layer4_Container"
          style="width:1250px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+         <div class="tabs" data-tabs="0" data-tabs-root>
+             <div class="tabs__tab" data-tabs="0" data-tabs-tab="0">
+                 <div class="tabs__text">По количеству устройств</div>
+             </div>
+             <div class="tabs__tab" data-tabs="0" data-tabs-tab="1">
+                <div class="tabs__text">По количеству пользователей</div>
+             </div>
+         </div>
         <div id="wb_Shape3" style="position:absolute;left:576px;top:37px;width:620px;height:484px;z-index:37;">
             <img src="images/img0002.png" id="Shape3" alt="" style="width:620px;height:484px;"></div>
         <div id="wb_Text14"
@@ -324,24 +331,24 @@
                     </div>
                 </div>
             </a></div>
-        <iframe name="InlineFrame1" id="InlineFrame1"
+        <iframe class="tabs__iframe" name="InlineFrame1" id="InlineFrame1"
                 style="position:absolute;left:87px;top:63px;width:567px;height:432px;z-index:62;"
-                src="calc/index.html" scrolling="no"></iframe>
+                src="calc/index.html" scrolling="no" data-tabs="0" data-tabs-iframe="0"></iframe>
+        <iframe class="tabs__iframe" name="InlineFrame1" id="InlineFrame1"
+        style="position:absolute;left:87px;top:63px;width:567px;height:432px;z-index:62;"
+        src="calc/index.html" scrolling="no" data-tabs="0" data-tabs-iframe="1"></iframe>
         <div id="wb_Shape17" style="position:absolute;left:70px;top:48px;width:584px;height:43px;z-index:63;">
             <img src="images/img0018.png" id="Shape17" alt="" style="width:584px;height:43px;"></div>
         <div id="wb_Shape18" style="position:absolute;left:64px;top:69px;width:37px;height:452px;z-index:64;">
             <img src="images/img0019.png" id="Shape18" alt="" style="width:37px;height:452px;"></div>
         <div id="wb_Shape19" style="position:absolute;left:632px;top:69px;width:17px;height:452px;z-index:65;">
             <img src="images/img0026.png" id="Shape19" alt="" style="width:17px;height:452px;"></div>
-        <div id="wb_Text44" style="position:absolute;left:128px;top:70px;width:483px;height:33px;z-index:66;">
+        <div id="wb_Text44" class="tabs__title" style="position:absolute;left:128px;top:70px;width:483px;height:33px;z-index:66;">
             <span style="color:#40395E;font-family:Calibri;font-size:27px;line-height:32px;"><strong>Рассчитайте стоимость обслуживания:</strong></span>
         </div>
         <iframe name="InlineFrame1" id="InlineFrame2"
                 style="position:absolute;left:756px;top:63px;width:356px;height:432px;z-index:67;" src="./3.html"
                 scrolling="no"></iframe>
-        <div id="wb_Shape14" style="position:absolute;left:527px;top:112px;width:127px;height:54px;z-index:68;">
-            <div id="Shape14"></div>
-        </div>
         <div id="wb_Checkbox1" style="position:absolute;left:529px;top:146px;width:20px;height:20px;z-index:69;">
             <input type="checkbox" id="Checkbox1" name="более 51" value="" style="position:absolute;left:0;top:0;"
                    onchange=""><label for="Checkbox1"></label></div>

@@ -1,7 +1,46 @@
-.page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  
-  color: red;
+.tabs {
+  position: absolute;
+  z-index: 100;
+  left: 60px;
+  top: 37px;
+
+  width: 604px;
+  height: 46px;
+  display: flex;
+
+  background-color: #e8f2f7;
+  border-radius: 14px 14px 0 0;
+}
+
+.tabs__tab {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 14px 14px 0 0;
+}
+.tabs__tab:not(.tabs__tab--active) {
+  cursor: pointer;
+}
+.tabs__tab--active {
+  background-color: white;
+}
+
+.tabs__text {
+  font-size: 19px;
+  line-height: 24px;
+}
+
+.tabs__iframe {
+}
+.tabs__iframe:not(.tabs__iframe--active) {
+  display: none;
+}
+.tabs__iframe--active {
+}
+
+.tabs__title {
+  top: 95px !important;
 }
