@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-210757171-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,8 +13,6 @@
 
         gtag('config', 'UA-210757171-1');
     </script>
-    </script>
-    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () {
@@ -36,7 +33,6 @@
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/86028483" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
-    <!-- /Yandex.Metrika counter -->
     <meta charset="utf-8">
     <title>Обслуживание рабочих мест</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -62,21 +58,6 @@
         }
     </script>
     <script src='js/js.cookie.min.js'></script>
-    <script>
-        $(document).ready(function () {
-            $("#Checkbox1").change(function () {
-                if ($('#Checkbox1').is(':checked')) {
-                    ShowObject('wb_Shape22', 1);
-                    Cookies.set('Checkbox1', 'выбрано');
-                }
-                if (!$('#Checkbox1').is(':checked')) {
-                    ShowObject('wb_Shape22', 0);
-                    Cookies.set('Checkbox1', 'не выбрано');
-                }
-            });
-            $("#Checkbox1").trigger('change');
-        });
-    </script>
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic"
           rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic,cyrillic-ext" rel="stylesheet">
@@ -84,11 +65,10 @@
           rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic&subset=latin,cyrillic,cyrillic-ext"
           rel="stylesheet">
-
     <script src="owl/dist/owl.carousel.min.js"></script>
     <script src="js/my.js"></script>
     <script type="text/javascript" src="js/carabi.js"></script>
-
+    <link rel="stylesheet" href="/components/page/index.css">
 </head>
 <body onload="ShowObject('GalBild2', 0);ShowObject('GalBild3', 0);return false;">
 <div id="container">
@@ -248,6 +228,10 @@
 ">
     <div id="Layer4_Container"
          style="width:1250px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+        <div class="tabs">
+            <button class="tabs__tab tabs__tab--active" data-tabs-tab="1">tab 1</button>
+            <button class="tabs__tab" data-tabs-tab="2">tab 2</button>
+        </div>
         <div id="wb_Shape3" style="position:absolute;left:576px;top:37px;width:620px;height:484px;z-index:37;">
             <img src="images/img0002.png" id="Shape3" alt="" style="width:620px;height:484px;"></div>
         <div id="wb_Text14"
@@ -323,9 +307,12 @@
                     </div>
                 </div>
             </a></div>
-        <iframe name="InlineFrame1" id="InlineFrame1"
+        <iframe class="tabs__content tabs__content--active" data-tabs-content="1" name="InlineFrame1" id="InlineFrame1"
                 style="position:absolute;left:87px;top:63px;width:567px;height:432px;z-index:62;"
-                src="calc/index.html" scrolling="no"></iframe>
+                src="/calc/index.html" data-tabs-content="2" scrolling="no"></iframe>
+        <iframe class="tabs__content" data-tabs-content="2" name="InlineFrame1" id="InlineFrame1"
+                style="position:absolute;left:87px;top:63px;width:567px;height:432px;z-index:62;"
+                src="/calc/index.html" scrolling="no"></iframe>
         <div id="wb_Shape17" style="position:absolute;left:70px;top:48px;width:584px;height:43px;z-index:63;">
             <img src="images/img0018.png" id="Shape17" alt="" style="width:584px;height:43px;"></div>
         <div id="wb_Shape18" style="position:absolute;left:64px;top:69px;width:37px;height:452px;z-index:64;">
@@ -335,7 +322,7 @@
         <div id="wb_Text44" style="position:absolute;left:128px;top:70px;width:483px;height:33px;z-index:66;">
             <span style="color:#40395E;font-family:Calibri;font-size:27px;line-height:32px;"><strong>Рассчитайте стоимость обслуживания:</strong></span>
         </div>
-        <iframe name="InlineFrame1" id="InlineFrame2"
+        <iframe data-form name="InlineFrame1" id="InlineFrame2"
                 style="position:absolute;left:756px;top:63px;width:356px;height:432px;z-index:67;" src="./3.html"
                 scrolling="no"></iframe>
         <div id="wb_Shape14" style="position:absolute;left:527px;top:112px;width:127px;height:54px;z-index:68;">
@@ -346,7 +333,7 @@
                    onchange=""><label for="Checkbox1"></label></div>
         <div id="wb_Text51" style="position:absolute;left:558px;top:147px;width:124px;height:19px;z-index:70;">
             <span style="color:#000000;font-family:Arial;font-size:17px;">более 50</span></div>
-        <div id="wb_Shape22" style="position:absolute;left:125px;top:437px;width:285px;height:58px;z-index:71;">
+        <div id="wb_Shape22" style="position:absolute;left:125px;top:437px;width:285px;height:58px;z-index:71;visibility:hidden;">
             <a href="javascript:displaylightbox('./4.html',{width:357,height:420})" target="_self">
                 <div id="Shape22">
                     <div id="Shape22_text"><span style="color:#FFFFFF;font-family:'Calibri Light';font-size:21px;">Индивидуальный рассчет</span>
@@ -573,5 +560,6 @@
         }(window, document, '//widgets.mango-office.ru/widgets/mango.js', 'mango-js', 'mgo'));
         mgo({calltracking: {id: 26455, elements: [{"numberText": "78005006126"}]}});
     </script>
+    <script src="/components/page/index.js"></script>
 </body>
 </html>

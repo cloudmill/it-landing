@@ -1,0 +1,25 @@
+.tabs {
+  position: absolute;
+  z-index: 64;
+  top: 37px;
+  left: 60px;
+
+  width: 604px;
+  display: flex;
+}
+
+.tabs__tab {
+  font-size: 20px;
+  cursor: pointer;
+}
+.tabs__tab--active {
+  background-color: black;
+  color: white;
+}
+.tabs__tab:not(:first-child) {
+  margin-left: 20px;
+}
+
+.tabs__content:not(.tabs__content--active) {
+  display: none;
+}
