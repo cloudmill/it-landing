@@ -91,29 +91,36 @@ $(document).ready(function () {
       const activeCalculatorWindow = window.parent.document.querySelector(
         ".tabs__content--active"
       ).contentWindow;
+
+      let flag = 0;
       onMessage("CALCULATOR_FORM_DATA", (dataFromCalculator) => {
-        data = { ...data, ...dataFromCalculator };
+        if (flag === 1) {
+          flag = 2;
 
-        console.log(data);
+          data = { ...data, ...dataFromCalculator };
 
-        send(carabiData);
+          console.log(data);
 
-        $.ajax({
-          type: "POST",
-          url: "/include/ajax/forms/3.php",
-          dataType: "json",
-          data: data,
-          success: function (r) {
-            if (r.success) {
-              $("#Layer3").hide();
-              $(".form-response").show();
-            } else {
-              alert(r.message);
-            }
-          },
-        });
+          send(carabiData);
+
+          $.ajax({
+            type: "POST",
+            url: "/include/ajax/forms/3.php",
+            dataType: "json",
+            data: data,
+            success: function (r) {
+              if (r.success) {
+                $("#Layer3").hide();
+                $(".form-response").show();
+              } else {
+                alert(r.message);
+              }
+            },
+          });
+        }
       });
       sendMessage(activeCalculatorWindow, "FORM_CALCULATOR_DATA");
+      flag = 1;
     } else {
       console.log("nonValid");
     }
