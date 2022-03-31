@@ -20,6 +20,23 @@ const sendMessage = (target, type, data) => {
   target.postMessage(message);
 };
 
+// communication with form
+onMessage("FORM_CALCULATOR_DATA", () => {
+  const data = {};
+
+  $("[data-field]").each(function () {
+    const field = $(this).data("field");
+    const value = $(this).val();
+
+    data[field] = value;
+  });
+
+  const formWindow =
+    window.parent.document.querySelector("[data-form]").contentWindow;
+
+  sendMessage(formWindow, "CALCULATOR_FORM_DATA", data);
+});
+
 /*
   range in calculator
 
