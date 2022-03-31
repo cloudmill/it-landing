@@ -20,75 +20,61 @@ const sendMessage = (target, type, data) => {
   target.postMessage(message);
 };
 
-// logic (legacy)
-const priceData = [
-  {
-    total: 1200,
-    arr: [1, 5],
-  },
-  {
-    total: 1120,
-    arr: [6, 10],
-  },
-  {
-    total: 1020,
-    arr: [11, 20],
-  },
-  {
-    total: 890,
-    arr: [21, 35],
-  },
-  {
-    total: 850,
-    arr: [36, 50],
-  },
-];
+/*
+  range in calculator
 
-var result2 = document.getElementById("result2");
+  data-range .range
+    data-range-slider [data-range-calc, data-range-formula] .range__slider
+    data-range-field  .range__field
+*/
+window.addEventListener("DOMContentLoaded", () => {
+  const result = document.getElementById("result2");
+  let formula = null;
+  const calculate = (value) => {
+    let multiplier = 0;
 
-$("#type_design2").ionRangeSlider({
-  min: 1,
-  max: 50,
-  from: 1,
-  step: 1,
-  grid: false,
-  onChange: function (data) {
-    myCalc();
-  },
-});
+    for (let i = 0; i < formula.length; i++) {
+      const arr = formula[i].arr;
 
-$("#Combobox4").ionRangeSlider({
-  min: 1,
-  max: 100,
-  step: 1,
-  from: 1,
-  grid: false,
-});
-
-function myCalc() {
-  let result = 0;
-  var type_instance = $("#type_design2").data("ionRangeSlider");
-  let from = parseInt(type_instance.result.from);
-  for (var i = 0; i < priceData.length; i++) {
-    let arr = priceData[i].arr;
-    if (arr[0] <= from && arr[1] >= from) {
-      result = priceData[i].total;
+      if (arr[0] <= value && arr[1] >= value) {
+        multiplier = formula[i].total;
+      }
     }
-  }
-  let price = result * from;
-  $("#result2").text(price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
-}
 
-myCalc();
+    const price = multiplier * value;
 
-// communication
-onMessage("FORM_CALC_DATA", () => {
-  const data = {};
+    $(result).text(price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+  };
 
-  $("[data-type=get-field]").each(function () {
-    let field = $(this).data("field"),
-      val = $(this).val();
+  const allRange = document.querySelectorAll("[data-range]");
+  allRange.forEach((range) => {
+    const slider = range.querySelector("[data-range-slider]");
+    const field = range.querySelector("[data-range-field]");
 
-    data[field] = val;
+    const isCalc = slider.hasAttribute("data-range-calc");
+
+    if (isCalc) {
+      formula = JSON.parse(slider.dataset.rangeFormula);
+    }
+
+    const update = ({ from }) => {
+      field.value = from;
+      isCalc && calculate(from);
+    };
+
+    $(slider).ionRangeSlider({
+      onChange: update,
+      onStart: update,
+    });
+
+    const ionRangeSliderInstance = $(slider).data("ionRangeSlider");
+
+    field.addEventListener("input", (e) => {
+      ionRangeSliderInstance.update({
+        from: +e.target.value,
+      });
+
+      calculate(ionRangeSliderInstance.result.from);
+    });
   });
 });

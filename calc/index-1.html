@@ -19,6 +19,7 @@
       href="ion.rangeSlider-master/css/ion.rangeSlider.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <link rel="stylesheet" href="/components/calc/index.css" />
   </head>
   <body>
     <div
@@ -111,15 +112,24 @@
             height: 34px;
             z-index: 9;
           "
+          data-range
+          class="range"
         >
           <br />
           <input
+            class="range__slider"
+            data-range-slider
+            data-range-calc
+            data-range-formula='[{"total":1200,"arr":[1,5]},{"total":1120,"arr":[6,10]},{"total":1020,"arr":[11,20]},{"total":890,"arr":[21,35]},{"total":850,"arr":[36,50]}]'
+            data-min="1"
+            data-max="50"
             type="text"
             id="type_design2"
             class="js-range-slider"
             name="Количество рабочих мест"
             value=""
           />
+          <input type="text" data-range-field class="range__field" />
         </div>
         <div
           id="Html3"
@@ -231,14 +241,20 @@
             height: 29px;
             z-index: 22;
           "
+          data-range
+          class="range"
         >
           <input
+            class="range__slider"
+            data-range-slider
+            data-min="1"
             type="text"
             id="Combobox4"
             class="js-range-slider"
             name="Оргтехника и сетевое оборудование"
             value=""
           />
+          <input type="text" data-range-field class="range__field" />
         </div>
       </form>
     </div>
