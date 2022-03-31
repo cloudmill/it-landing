@@ -33,6 +33,7 @@ const tabs = () => {
 
   // checkbox & button
   const checkbox = document.getElementById("Checkbox1");
+  const checkboxLabel = document.querySelector("#wb_Text51 span");
   const button = document.getElementById("wb_Shape22");
   const checkboxState = {};
 
@@ -58,6 +59,9 @@ const tabs = () => {
       content.classList.add(CONTENT_ACTIVE_CLASS);
 
       // chekcbox & button
+      const checkboxText = tab.dataset.tabsCheckbox;
+      checkboxLabel.innerText = `более ${checkboxText}`;
+
       checkbox.checked = !!checkboxState[id];
       button.style.visibility = !!checkboxState[id] ? "visible" : "hidden";
 
