@@ -50,3 +50,37 @@
   font-size: 14px !important;
   line-height: 1.1 !important;
 }
+
+.section {
+  background: none !important;
+}
+.section::before {
+  position: absolute;
+  z-index: -1;
+  top: -83px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  content: "";
+  height: 630px;
+
+  background-color: transparent;
+  background-image: url(/images/111111111111111111.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.section__title {
+  position: absolute;
+  top: calc(-83px + 48px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 24px;
+  color: #ffffff;
+}
