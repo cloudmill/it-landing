@@ -99,8 +99,9 @@
             height: 19px;
             z-index: 5;
           "
+          class="title"
         >
-          <span style="color: #000000">Количество рабочих мест</span>
+          <span style="color: #000000">Количество рабочих<br />мест</span>
         </div>
         <div
           id="Html5"
@@ -130,7 +131,11 @@
             name="Количество рабочих мест"
             value=""
           />
-          <input type="text" data-range-field class="range__field" />
+          <input
+            type="text"
+            data-range-field
+            class="range__field range__field--offset"
+          />
         </div>
         <div
           id="Html3"
@@ -227,6 +232,7 @@
             height: 19px;
             z-index: 4;
           "
+          class="title"
         >
           <span style="color: #000000; font-family: Arial; font-size: 17px">
             Количество Принтеров<br />
@@ -249,6 +255,7 @@
             class="range__slider"
             data-range-slider
             data-min="1"
+            data-max="100"
             data-field="Оргтехника и сетевое оборудование"
             type="text"
             id="Combobox4"
@@ -260,6 +267,7 @@
         </div>
       </form>
     </div>
+    <script src="https://unpkg.com/imask"></script>
     <script src="/components/calc/index.js"></script>
   </body>
 </html>

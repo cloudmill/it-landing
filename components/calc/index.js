@@ -70,6 +70,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const isCalc = slider.hasAttribute("data-range-calc");
 
+    {
+      const sliderMin = +slider.dataset.min;
+      const sliderMax = +slider.dataset.max;
+
+      const numberMask = IMask(field, {
+        mask: Number,
+
+        min: sliderMin,
+        max: sliderMax,
+      });
+
+      field.addEventListener("blur", () => {
+        if (!+field.value) {
+          field.value = sliderMin;
+        }
+      });
+    }
+
     if (isCalc) {
       formula = JSON.parse(slider.dataset.rangeFormula);
     }

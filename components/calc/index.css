@@ -1,15 +1,22 @@
 .range {
-  color: green;
+  left: 215px !important;
 }
-
-.range__slider {
-  color: red;
-}
-
 .range__field {
   position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: -12px;
+  left: calc(100% + 17px);
+
   width: 40px;
+  height: 20px;
+
+  border: 1px solid #E1E4E9;
+  color: #B7B9BD;
+  text-align: center;
+}
+.range__field--offset {
+  bottom: -22px;
+}
+
+.title {
+  left: 12px !important;
 }

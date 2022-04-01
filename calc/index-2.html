@@ -100,7 +100,7 @@
             z-index: 5;
           "
         >
-          <span style="color: #000000">Количество пользователей</span>
+          <span style="color: #000000">Количество<br />пользователей</span>
         </div>
         <div
           id="Html5"
@@ -130,7 +130,11 @@
             name="Количество пользователей"
             value=""
           />
-          <input type="text" data-range-field class="range__field" />
+          <input
+            type="text"
+            data-range-field
+            class="range__field range__field--offset"
+          />
         </div>
         <div
           id="Html3"
@@ -230,6 +234,7 @@
             class="range__slider"
             data-range-slider
             data-min="1"
+            data-max="100"
             data-field="Количество офисов"
             type="text"
             id="Combobox4"
@@ -241,6 +246,7 @@
         </div>
       </form>
     </div>
+    <script src="https://unpkg.com/imask"></script>
     <script src="/components/calc/index.js"></script>
   </body>
 </html>

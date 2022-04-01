@@ -1,25 +1,52 @@
 .tabs {
   position: absolute;
-  z-index: 64;
+  z-index: 66;
   top: 37px;
   left: 60px;
 
   width: 604px;
+  height: 46px;
   display: flex;
+  overflow: hidden;
+
+  background-color: #e8f2f7;
+  border-radius: 14px 14px 0 0;
 }
 
 .tabs__tab {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 14px 14px 0 0;
   font-size: 20px;
   cursor: pointer;
 }
 .tabs__tab--active {
-  background-color: black;
-  color: white;
+  background-color: white;
 }
-.tabs__tab:not(:first-child) {
-  margin-left: 20px;
+.tabs__tab:not(.tabs__tab--active) {
+  cursor: pointer;
 }
-
 .tabs__content:not(.tabs__content--active) {
   display: none;
+}
+
+.checkbox {
+  top: 151px !important;
+  left: 540px !important;
+}
+.checkbox > label::before {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.checkbox-text {
+  top: 151px !important;
+  left: 566px !important;
+}
+.checkbox-text > span {
+  font-size: 14px !important;
+  line-height: 1.1 !important;
 }
